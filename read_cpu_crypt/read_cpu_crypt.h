@@ -15,13 +15,30 @@
 #define DLL_API __declspec(dllimport)
 #endif
 
-class DLL_API read_cpu_crypt
+class  read_cpu_crypt
 {
 public:
+	/*
+	* 哈希函数
+	* 
+	* @param input 输入字符串
+	* 
+	* @return 返回哈希值
+	*/
 	std::string hash(const std::string& input);
 
+	/*
+	* 获取主板序列号
+	* 
+	* @return 返回主板序列号
+	*/
 	std::string GetBoardSerial();
 
+	/*
+	* 获取CPU序列号
+	* 
+	* @return 返回CPU序列号
+	*/
 	std::string GetCpuSerial();
 private:
 	class Ipmi;
